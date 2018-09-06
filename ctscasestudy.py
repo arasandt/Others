@@ -109,30 +109,37 @@
 # #print(df.head())
 # =============================================================================
 
-#from xml.dom.minidom import parse
-import xml.dom.minidom
-import urllib.request
-#from urllib.request import Request, urlopen
-#data = urlopen("http://test.cognizant.e-box.co.in/uploads/call.xml").read().decode('ascii')
-data = urllib.request.urlretrieve("http://test.cognizant.e-box.co.in/uploads/call.xml")
-#print(data)
-DOMTree = xml.dom.minidom.parse(data[0])
-#collection = 
-datausage = DOMTree.documentElement.getElementsByTagName("datausage")
-#print(datausage)
-for i in datausage:
-    customerid = i.getElementsByTagName('customerid')[0]
-    tonumber = i.getElementsByTagName('tonumber')[0]
-    duration = i.getElementsByTagName('duration')[0]
-    amount = i.getElementsByTagName('amount')[0]
-    print(customerid.childNodes[0].data,tonumber.childNodes[0].data,duration.childNodes[0].data,amount.childNodes[0].data)
+# =============================================================================
+# #from xml.dom.minidom import parse
+# import xml.dom.minidom
+# import urllib.request
+# #from urllib.request import Request, urlopen
+# #data = urlopen("http://test.cognizant.e-box.co.in/uploads/call.xml").read().decode('ascii')
+# data = urllib.request.urlretrieve("http://test.cognizant.e-box.co.in/uploads/call.xml")
+# #print(data)
+# DOMTree = xml.dom.minidom.parse(data[0])
+# #collection = 
+# datausage = DOMTree.documentElement.getElementsByTagName("datausage")
+# #print(datausage)
+# for i in datausage:
+#     customerid = i.getElementsByTagName('customerid')[0]
+#     tonumber = i.getElementsByTagName('tonumber')[0]
+#     duration = i.getElementsByTagName('duration')[0]
+#     amount = i.getElementsByTagName('amount')[0]
+#     print(customerid.childNodes[0].data,tonumber.childNodes[0].data,duration.childNodes[0].data,amount.childNodes[0].data)
+# 
+# 
+# 
+# 
+# 
+# 
+# =============================================================================
+import datetime
 
-
-
-
-
-
-
+a = '20-Aug-2018'
+x = datetime.datetime.strptime(a,'%d-%b-%Y')
+print(datetime.datetime.weekday(x))
+"https://raw.githubusercontent.com/arasandt/LearnPython/master/input/datausage.csv"
 
 
 
